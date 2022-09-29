@@ -1,5 +1,5 @@
 import { NetworkConfig } from './types';
-import { Defaults } from 'avalanche/dist/utils';
+import { Defaults } from '@savannah-labs/savannahjs/dist/utils';
 import { getRpcC, getRpcP, getRpcX } from './helpers/rpcFromConfig';
 
 export const MainnetConfig: NetworkConfig = {
@@ -56,6 +56,60 @@ export const TestnetConfig: NetworkConfig = {
     },
 };
 
+export const SavannahConfig: NetworkConfig = {
+    rawUrl: 'https://api.savannah.network',
+    apiProtocol: 'http',
+    apiIp: 'api.savannah.network',
+    apiPort: 9650,
+    explorerURL: 'https://explorerapi.savannah.network',
+    explorerSiteURL: 'https://explorer.savannah.network',
+    networkID: 6,
+    // @ts-ignore
+    xChainID: Defaults.network[1]['X']['blockchainID'],
+    // @ts-ignore
+    pChainID: Defaults.network[1]['P']['blockchainID'],
+    // @ts-ignore
+    cChainID: Defaults.network[1]['C']['blockchainID'],
+    // @ts-ignore
+    evmChainID: Defaults.network[1]['C']['chainID'],
+    // @ts-ignore
+    avaxID: Defaults.network[1]['X']['avaxAssetID'],
+    get rpcUrl() {
+        return {
+            c: getRpcC(this),
+            p: getRpcP(this),
+            x: getRpcX(this),
+        };
+    },
+};
+
+export const MarulaConfig: NetworkConfig = {
+    rawUrl: 'http://api.test.savannah.network',
+    apiProtocol: 'http',
+    apiIp: 'api.test.savannah.network',
+    apiPort: 9650,
+    explorerURL: 'https://explorerapi.test.savannah.network',
+    explorerSiteURL: 'https://explorer.test.savannah.network',
+    networkID: 7,
+    // @ts-ignore
+    xChainID: Defaults.network[5]['X']['blockchainID'],
+    // @ts-ignore
+    pChainID: Defaults.network[5]['P']['blockchainID'],
+    // @ts-ignore
+    cChainID: Defaults.network[5]['C']['blockchainID'],
+    // @ts-ignore
+    evmChainID: Defaults.network[5]['C']['chainID'],
+    // @ts-ignore
+    avaxID: Defaults.network[5]['X']['avaxAssetID'],
+    get rpcUrl() {
+        return {
+            c: getRpcC(this),
+            p: getRpcP(this),
+            x: getRpcX(this),
+        };
+    },
+};
+
 export const LocalnetConfig: NetworkConfig = {
     rawUrl: 'http://localhost:9650',
     apiProtocol: 'http',
@@ -82,4 +136,4 @@ export const LocalnetConfig: NetworkConfig = {
 };
 
 // Default network connection
-export const DefaultConfig = MainnetConfig;
+export const DefaultConfig = MarulaConfig;

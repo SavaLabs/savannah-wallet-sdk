@@ -8,8 +8,8 @@ import {
 } from '@/History';
 import * as Assets from '@/Asset/Assets';
 import { bnToLocaleString, getTxFeeX } from '@/utils';
-import { AVMConstants } from 'avalanche/dist/apis/avm';
-import { BN } from 'avalanche';
+import { AVMConstants } from '@savannah-labs/savannahjs/dist/apis/avm';
+import { BN } from '@savannah-labs/savannahjs';
 import { getNFTBalanceFromUTXOs, parseMemo } from '@/History/history_helpers';
 import {
     filterDuplicateStrings,

@@ -1,4 +1,4 @@
-import { BN } from 'avalanche';
+import { BN } from '@savannah-labs/savannahjs';
 import { ChainIdType } from '@/common';
 import { iAssetDescriptionClean } from '@/Asset/types';
 import { OrteliusAvalancheTx, OrteliusEvmTx } from '@/Explorer';

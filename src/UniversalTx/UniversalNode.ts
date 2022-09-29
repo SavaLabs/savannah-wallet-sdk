@@ -1,4 +1,4 @@
-import { BN } from 'avalanche';
+import { BN } from '@savannah-labs/savannahjs';
 import { ChainIdType } from '@/common';
 import {
     UniversalTx,
@@ -132,7 +132,7 @@ export abstract class UniversalNodeAbstract {
 
         // If we still have remaining balance, we can not complete this transfer
         if (remaining.gt(new BN(0))) {
-            throw new Error('Insufficient AVAX balances.');
+            throw new Error('Insufficient FUEL balances.');
         }
 
         return transactions;

@@ -1,5 +1,5 @@
 import { NetworkConfig } from '@/Network/types';
-import { LocalnetConfig, MainnetConfig, TestnetConfig } from '@/Network/constants';
+import { LocalnetConfig, MainnetConfig, TestnetConfig, SavannahConfig, MarulaConfig } from '@/Network/constants';
 import { activeNetwork } from '@/Network/network';
 
 export function isFujiNetwork(activeNetwork: NetworkConfig) {
@@ -8,6 +8,14 @@ export function isFujiNetwork(activeNetwork: NetworkConfig) {
 
 export function isMainnetNetwork(activeNetwork: NetworkConfig) {
     return activeNetwork.networkID === MainnetConfig.networkID;
+}
+
+export function isMarulaNetwork(activeNetwork: NetworkConfig) {
+    return activeNetwork.networkID === MarulaConfig.networkID;
+}
+
+export function isSavannahNetwork(activeNetwork: NetworkConfig) {
+    return activeNetwork.networkID === SavannahConfig.networkID;
 }
 
 export function isLocalNetwork(activeNetwork: NetworkConfig) {
